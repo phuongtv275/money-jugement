@@ -1,0 +1,21 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Environment local overrides
+.env*.local
+
+# Dependencies & Build artifacts
+**/node_modules/
+**/.next/
+**/dist/
+**/build/
+**/coverage/
+
+# Agent coding files & folders (do not push to git)
+**/AGENTS.md
+**/CLAUDE.md
+**/plan/
+**/.agents/
+**/skills-lock.json
+**/*.bak
