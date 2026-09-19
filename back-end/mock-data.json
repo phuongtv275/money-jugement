@@ -1,0 +1,1070 @@
+{
+  "_meta": {
+    "title": "Money Judgement Mock Dataset",
+    "version": "1.0.0",
+    "description": "Dữ liệu mẫu chuẩn đồng bộ 100% với openapi.yaml và types.ts, hỗ trợ cả Relational DB Seeding và Mock API Server cho Backend & Frontend.",
+    "currency": "VND",
+    "currency_rules": "Số tiền là số nguyên (integer). 1 VND = 1 đơn vị. Tổng nợ ròng (net_balance) trong nhóm luôn bằng 0.",
+    "created_at": "2026-09-19T20:15:00Z"
+  },
+  "auth": {
+    "default_user_email": "nam.nguyen@example.com",
+    "default_user_password": "Password123!",
+    "jwt_demo_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMTExMTExMS0xMTExLTQxMTEtODExMS0xMTExMTExMTExMTEiLCJlbWFpbCI6Im5hbS5uZ3V5ZW5AZXhhbXBsZS5jb20iLCJuYW1lIjoiTmd1eeG7h24gVsSDbiBOYW0iLCJleHAiOjE4MDAwMDAwMDB9.mockSignatureForDevelopmentOnly",
+    "jwt_refresh_token": "mock-refresh-token-nam-nguyen-uuid-01"
+  },
+  "database_seeds": {
+    "users": [
+      {
+        "id": "a1111111-1111-4111-8111-111111111111",
+        "email": "nam.nguyen@example.com",
+        "name": "Nguyễn Văn Nam",
+        "password_hash": "$2b$12$e8Y...mock_bcrypt_hash_for_Password123!",
+        "avatar_media_id": "m-avatar-01",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-01T08:00:00Z"
+      },
+      {
+        "id": "b2222222-2222-4222-8222-222222222222",
+        "email": "lan.tran@example.com",
+        "name": "Trần Thị Lan",
+        "password_hash": "$2b$12$e8Y...mock_bcrypt_hash_for_Password123!",
+        "avatar_media_id": "m-avatar-02",
+        "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-01T08:30:00Z"
+      },
+      {
+        "id": "c3333333-3333-4333-8333-333333333333",
+        "email": "long.le@example.com",
+        "name": "Lê Hoàng Long",
+        "password_hash": "$2b$12$e8Y...mock_bcrypt_hash_for_Password123!",
+        "avatar_media_id": "m-avatar-03",
+        "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-02T09:00:00Z"
+      },
+      {
+        "id": "d4444444-4444-4444-8444-444444444444",
+        "email": "thu.pham@example.com",
+        "name": "Phạm Minh Thư",
+        "password_hash": "$2b$12$e8Y...mock_bcrypt_hash_for_Password123!",
+        "avatar_media_id": "m-avatar-04",
+        "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-03T10:00:00Z"
+      }
+    ],
+    "groups": [
+      {
+        "id": "e1111111-0000-4000-8000-000000000001",
+        "name": "Chuyến Du Lịch Đà Lạt 🌸",
+        "currency": "VND",
+        "created_by": "a1111111-1111-4111-8111-111111111111",
+        "created_at": "2026-09-10T07:00:00Z"
+      },
+      {
+        "id": "e2222222-0000-4000-8000-000000000002",
+        "name": "Tiền Trọ & Sinh Hoạt Tháng 10 🏠",
+        "currency": "VND",
+        "created_by": "b2222222-2222-4222-8222-222222222222",
+        "created_at": "2026-10-01T08:00:00Z"
+      },
+      {
+        "id": "e3333333-0000-4000-8000-000000000003",
+        "name": "Cà Phê & Ăn Trưa Tech Team ☕",
+        "currency": "VND",
+        "created_by": "a1111111-1111-4111-8111-111111111111",
+        "created_at": "2026-10-05T11:00:00Z"
+      }
+    ],
+    "group_members": [
+      {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "role": "OWNER",
+        "status": "ACTIVE",
+        "joined_at": "2026-09-10T07:00:00Z"
+      },
+      {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "user_id": "b2222222-2222-4222-8222-222222222222",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-09-10T07:10:00Z"
+      },
+      {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "user_id": "c3333333-3333-4333-8333-333333333333",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-09-10T07:15:00Z"
+      },
+      {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "user_id": "d4444444-4444-4444-8444-444444444444",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-09-10T07:20:00Z"
+      },
+      {
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "user_id": "b2222222-2222-4222-8222-222222222222",
+        "role": "OWNER",
+        "status": "ACTIVE",
+        "joined_at": "2026-10-01T08:00:00Z"
+      },
+      {
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-10-01T08:05:00Z"
+      },
+      {
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "user_id": "c3333333-3333-4333-8333-333333333333",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-10-01T08:10:00Z"
+      },
+      {
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "role": "OWNER",
+        "status": "ACTIVE",
+        "joined_at": "2026-10-05T11:00:00Z"
+      },
+      {
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "user_id": "b2222222-2222-4222-8222-222222222222",
+        "role": "MEMBER",
+        "status": "ACTIVE",
+        "joined_at": "2026-10-05T11:05:00Z"
+      }
+    ],
+    "expenses": [
+      {
+        "id": "x1111111-0000-4000-8000-000000000001",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 1200000,
+        "currency": "VND",
+        "description": "Vé xe limousine khứ hồi Sài Gòn - Đà Lạt",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": true,
+        "bill_media_id": "m-bill-01",
+        "bill_view_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&fit=crop",
+        "created_at": "2026-09-11T09:00:00Z",
+        "updated_at": "2026-09-11T09:00:00Z"
+      },
+      {
+        "id": "x1111111-0000-4000-8000-000000000002",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "b2222222-2222-4222-8222-222222222222",
+        "paid_by_name": "Trần Thị Lan",
+        "amount": 2000000,
+        "currency": "VND",
+        "description": "Homestay Thung Lũng Mây (2 đêm)",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": true,
+        "bill_media_id": "m-bill-02",
+        "bill_view_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&fit=crop",
+        "created_at": "2026-09-12T14:00:00Z",
+        "updated_at": "2026-09-12T14:00:00Z"
+      },
+      {
+        "id": "x1111111-0000-4000-8000-000000000003",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "c3333333-3333-4333-8333-333333333333",
+        "paid_by_name": "Lê Hoàng Long",
+        "amount": 850000,
+        "currency": "VND",
+        "description": "Lẩu gà lá é Tao Ngộ & Nước ngọt",
+        "split_type": "EXACT",
+        "version": 1,
+        "has_bill": false,
+        "bill_media_id": null,
+        "bill_view_url": null,
+        "created_at": "2026-09-12T19:30:00Z",
+        "updated_at": "2026-09-12T19:30:00Z"
+      },
+      {
+        "id": "x1111111-0000-4000-8000-000000000004",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 350000,
+        "currency": "VND",
+        "description": "Cà phê ngắm hoàng hôn Cheo Veo",
+        "split_type": "EXACT",
+        "version": 1,
+        "has_bill": true,
+        "bill_media_id": "m-bill-03",
+        "bill_view_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&fit=crop",
+        "created_at": "2026-09-13T16:45:00Z",
+        "updated_at": "2026-09-13T16:45:00Z"
+      },
+      {
+        "id": "x2222222-0000-4000-8000-000000000001",
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "paid_by": "b2222222-2222-4222-8222-222222222222",
+        "paid_by_name": "Trần Thị Lan",
+        "amount": 4500000,
+        "currency": "VND",
+        "description": "Tiền phòng trọ tháng 10",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": true,
+        "bill_media_id": "m-bill-04",
+        "bill_view_url": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&fit=crop",
+        "created_at": "2026-10-01T09:00:00Z",
+        "updated_at": "2026-10-01T09:00:00Z"
+      },
+      {
+        "id": "x2222222-0000-4000-8000-000000000002",
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 600000,
+        "currency": "VND",
+        "description": "Tiền điện & nước tháng 9",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": true,
+        "bill_media_id": "m-bill-05",
+        "bill_view_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&fit=crop",
+        "created_at": "2026-10-02T10:00:00Z",
+        "updated_at": "2026-10-02T10:00:00Z"
+      },
+      {
+        "id": "x2222222-0000-4000-8000-000000000003",
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "paid_by": "c3333333-3333-4333-8333-333333333333",
+        "paid_by_name": "Lê Hoàng Long",
+        "amount": 90000,
+        "currency": "VND",
+        "description": "Bình nước 19L & Nước rửa chén",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": false,
+        "bill_media_id": null,
+        "bill_view_url": null,
+        "created_at": "2026-10-03T18:00:00Z",
+        "updated_at": "2026-10-03T18:00:00Z"
+      },
+      {
+        "id": "x3333333-0000-4000-8000-000000000001",
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 160000,
+        "currency": "VND",
+        "description": "Cơm trưa văn phòng Cơm tấm Cali",
+        "split_type": "EQUAL",
+        "version": 1,
+        "has_bill": false,
+        "bill_media_id": null,
+        "bill_view_url": null,
+        "created_at": "2026-10-05T11:30:00Z",
+        "updated_at": "2026-10-05T11:30:00Z"
+      }
+    ],
+    "expense_splits": [
+      { "expense_id": "x1111111-0000-4000-8000-000000000001", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 300000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000001", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 300000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000001", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 300000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000001", "user_id": "d4444444-4444-4444-8444-444444444444", "amount_owed": 300000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000002", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 500000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000002", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 500000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000002", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 500000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000002", "user_id": "d4444444-4444-4444-8444-444444444444", "amount_owed": 500000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000003", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 250000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000003", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 200000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000003", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 200000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000003", "user_id": "d4444444-4444-4444-8444-444444444444", "amount_owed": 200000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000004", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 90000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000004", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 85000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000004", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 95000 },
+      { "expense_id": "x1111111-0000-4000-8000-000000000004", "user_id": "d4444444-4444-4444-8444-444444444444", "amount_owed": 80000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000001", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 1500000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000001", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 1500000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000001", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 1500000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000002", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 200000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000002", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 200000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000002", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 200000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000003", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 30000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000003", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 30000 },
+      { "expense_id": "x2222222-0000-4000-8000-000000000003", "user_id": "c3333333-3333-4333-8333-333333333333", "amount_owed": 30000 },
+      { "expense_id": "x3333333-0000-4000-8000-000000000001", "user_id": "a1111111-1111-4111-8111-111111111111", "amount_owed": 80000 },
+      { "expense_id": "x3333333-0000-4000-8000-000000000001", "user_id": "b2222222-2222-4222-8222-222222222222", "amount_owed": 80000 }
+    ],
+    "payments": [
+      {
+        "id": "p1111111-0000-4000-8000-000000000001",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "from_user": "d4444444-4444-4444-8444-444444444444",
+        "from_user_name": "Phạm Minh Thư",
+        "to_user": "b2222222-2222-4222-8222-222222222222",
+        "to_user_name": "Trần Thị Lan",
+        "amount": 300000,
+        "currency": "VND",
+        "created_at": "2026-09-14T10:30:00Z"
+      },
+      {
+        "id": "p3333333-0000-4000-8000-000000000001",
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "from_user": "b2222222-2222-4222-8222-222222222222",
+        "from_user_name": "Trần Thị Lan",
+        "to_user": "a1111111-1111-4111-8111-111111111111",
+        "to_user_name": "Nguyễn Văn Nam",
+        "amount": 80000,
+        "currency": "VND",
+        "created_at": "2026-10-05T11:50:00Z"
+      }
+    ],
+    "notifications": [
+      {
+        "id": "n1111111-0000-4000-8000-000000000001",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "type": "EXPENSE_ADDED",
+        "message": "Trần Thị Lan đã thêm khoản chi 'Homestay Thung Lũng Mây (2 đêm)' trong Chuyến Du Lịch Đà Lạt 🌸",
+        "payload": {
+          "group_id": "e1111111-0000-4000-8000-000000000001",
+          "expense_id": "x1111111-0000-4000-8000-000000000002",
+          "amount": 2000000,
+          "actor_id": "b2222222-2222-4222-8222-222222222222"
+        },
+        "is_read": false,
+        "created_at": "2026-09-12T14:05:00Z"
+      },
+      {
+        "id": "n1111111-0000-4000-8000-000000000002",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "type": "PAYMENT_RECEIVED",
+        "message": "Phạm Minh Thư đã gửi 300.000 ₫ cho Trần Thị Lan trong Chuyến Du Lịch Đà Lạt 🌸",
+        "payload": {
+          "group_id": "e1111111-0000-4000-8000-000000000001",
+          "payment_id": "p1111111-0000-4000-8000-000000000001",
+          "amount": 300000,
+          "actor_id": "d4444444-4444-4444-8444-444444444444"
+        },
+        "is_read": false,
+        "created_at": "2026-09-14T10:35:00Z"
+      },
+      {
+        "id": "n1111111-0000-4000-8000-000000000003",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "type": "GROUP_INVITED",
+        "message": "Trần Thị Lan đã thêm bạn vào nhóm 'Tiền Trọ & Sinh Hoạt Tháng 10 🏠'",
+        "payload": {
+          "group_id": "e2222222-0000-4000-8000-000000000002",
+          "actor_id": "b2222222-2222-4222-8222-222222222222"
+        },
+        "is_read": true,
+        "created_at": "2026-10-01T08:05:00Z"
+      },
+      {
+        "id": "n1111111-0000-4000-8000-000000000004",
+        "user_id": "a1111111-1111-4111-8111-111111111111",
+        "type": "PAYMENT_CONFIRMED",
+        "message": "Khoản thanh toán 80.000 ₫ từ Trần Thị Lan đã được xác nhận trong Cà Phê & Ăn Trưa Tech Team ☕",
+        "payload": {
+          "group_id": "e3333333-0000-4000-8000-000000000003",
+          "amount": 80000,
+          "actor_id": "b2222222-2222-4222-8222-222222222222"
+        },
+        "is_read": true,
+        "created_at": "2026-10-05T12:00:00Z"
+      }
+    ],
+    "media": [
+      {
+        "id": "m-avatar-01",
+        "ref_type": "AVATAR",
+        "uploader_id": "a1111111-1111-4111-8111-111111111111",
+        "storage_key": "avatars/a1111111-1111-4111-8111-111111111111.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 1048576,
+        "status": "READY"
+      },
+      {
+        "id": "m-bill-01",
+        "ref_type": "BILL",
+        "uploader_id": "a1111111-1111-4111-8111-111111111111",
+        "storage_key": "bills/m-bill-01.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 2097152,
+        "status": "READY"
+      },
+      {
+        "id": "m-bill-02",
+        "ref_type": "BILL",
+        "uploader_id": "b2222222-2222-4222-8222-222222222222",
+        "storage_key": "bills/m-bill-02.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 1572864,
+        "status": "READY"
+      },
+      {
+        "id": "m-bill-03",
+        "ref_type": "BILL",
+        "uploader_id": "a1111111-1111-4111-8111-111111111111",
+        "storage_key": "bills/m-bill-03.jpg",
+        "mime_type": "image/jpeg",
+        "size_bytes": 1835008,
+        "status": "READY"
+      }
+    ]
+  },
+  "api_responses": {
+    "auth": {
+      "login_success": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMTExMTExMS0xMTExLTQxMTEtODExMS0xMTExMTExMTExMTEiLCJlbWFpbCI6Im5hbS5uZ3V5ZW5AZXhhbXBsZS5jb20iLCJuYW1lIjoiTmd1eeG7h24gVsSDbiBOYW0iLCJleHAiOjE4MDAwMDAwMDB9.mockSignatureForDevelopmentOnly",
+        "refresh_token": "mock-refresh-token-nam-nguyen-uuid-01",
+        "token_type": "bearer",
+        "expires_in": 900,
+        "user": {
+          "id": "a1111111-1111-4111-8111-111111111111",
+          "email": "nam.nguyen@example.com",
+          "name": "Nguyễn Văn Nam",
+          "avatar_media_id": "m-avatar-01",
+          "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+          "is_active": true,
+          "created_at": "2026-09-01T08:00:00Z"
+        }
+      },
+      "register_success": {
+        "id": "a1111111-1111-4111-8111-111111111111",
+        "email": "nam.nguyen@example.com",
+        "name": "Nguyễn Văn Nam",
+        "avatar_media_id": null,
+        "avatar_url": null,
+        "is_active": true,
+        "created_at": "2026-09-01T08:00:00Z"
+      },
+      "refresh_success": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMTExMTExMS0xMTExLTQxMTEtODExMS0xMTExMTExMTExMTEiLCJleHAiOjE4MDAwMDA5MDB9.newMockSignature",
+        "refresh_token": "mock-refresh-token-nam-nguyen-uuid-02",
+        "token_type": "bearer",
+        "expires_in": 900,
+        "user": {
+          "id": "a1111111-1111-4111-8111-111111111111",
+          "email": "nam.nguyen@example.com",
+          "name": "Nguyễn Văn Nam",
+          "avatar_media_id": "m-avatar-01",
+          "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+          "is_active": true,
+          "created_at": "2026-09-01T08:00:00Z"
+        }
+      },
+      "logout_success": {
+        "message": "Đăng xuất thành công"
+      }
+    },
+    "users": {
+      "get_me": {
+        "id": "a1111111-1111-4111-8111-111111111111",
+        "email": "nam.nguyen@example.com",
+        "name": "Nguyễn Văn Nam",
+        "avatar_media_id": "m-avatar-01",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-01T08:00:00Z"
+      },
+      "update_me_success": {
+        "id": "a1111111-1111-4111-8111-111111111111",
+        "email": "nam.nguyen@example.com",
+        "name": "Nguyễn Văn Nam (Đã cập nhật)",
+        "avatar_media_id": "m-avatar-01",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+        "is_active": true,
+        "created_at": "2026-09-01T08:00:00Z"
+      },
+      "search_users": [
+        {
+          "id": "b2222222-2222-4222-8222-222222222222",
+          "email": "lan.tran@example.com",
+          "name": "Trần Thị Lan",
+          "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          "id": "c3333333-3333-4333-8333-333333333333",
+          "email": "long.le@example.com",
+          "name": "Lê Hoàng Long",
+          "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face"
+        },
+        {
+          "id": "d4444444-4444-4444-8444-444444444444",
+          "email": "thu.pham@example.com",
+          "name": "Phạm Minh Thư",
+          "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+        }
+      ]
+    },
+    "groups": {
+      "list_groups_for_current_user": [
+        {
+          "id": "e1111111-0000-4000-8000-000000000001",
+          "name": "Chuyến Du Lịch Đà Lạt 🌸",
+          "currency": "VND",
+          "created_by": "a1111111-1111-4111-8111-111111111111",
+          "my_role": "OWNER",
+          "member_count": 4,
+          "created_at": "2026-09-10T07:00:00Z"
+        },
+        {
+          "id": "e2222222-0000-4000-8000-000000000002",
+          "name": "Tiền Trọ & Sinh Hoạt Tháng 10 🏠",
+          "currency": "VND",
+          "created_by": "b2222222-2222-4222-8222-222222222222",
+          "my_role": "MEMBER",
+          "member_count": 3,
+          "created_at": "2026-10-01T08:00:00Z"
+        },
+        {
+          "id": "e3333333-0000-4000-8000-000000000003",
+          "name": "Cà Phê & Ăn Trưa Tech Team ☕",
+          "currency": "VND",
+          "created_by": "a1111111-1111-4111-8111-111111111111",
+          "my_role": "OWNER",
+          "member_count": 2,
+          "created_at": "2026-10-05T11:00:00Z"
+        }
+      ],
+      "group_1_detail": {
+        "id": "e1111111-0000-4000-8000-000000000001",
+        "name": "Chuyến Du Lịch Đà Lạt 🌸",
+        "currency": "VND",
+        "created_by": "a1111111-1111-4111-8111-111111111111",
+        "my_role": "OWNER",
+        "created_at": "2026-09-10T07:00:00Z",
+        "members": [
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "email": "nam.nguyen@example.com",
+            "name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "role": "OWNER",
+            "status": "ACTIVE",
+            "joined_at": "2026-09-10T07:00:00Z"
+          },
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "email": "lan.tran@example.com",
+            "name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "joined_at": "2026-09-10T07:10:00Z"
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "email": "long.le@example.com",
+            "name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "joined_at": "2026-09-10T07:15:00Z"
+          },
+          {
+            "user_id": "d4444444-4444-4444-8444-444444444444",
+            "email": "thu.pham@example.com",
+            "name": "Phạm Minh Thư",
+            "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "joined_at": "2026-09-10T07:20:00Z"
+          }
+        ]
+      },
+      "group_2_detail": {
+        "id": "e2222222-0000-4000-8000-000000000002",
+        "name": "Tiền Trọ & Sinh Hoạt Tháng 10 🏠",
+        "currency": "VND",
+        "created_by": "b2222222-2222-4222-8222-222222222222",
+        "my_role": "MEMBER",
+        "created_at": "2026-10-01T08:00:00Z",
+        "members": [
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "email": "lan.tran@example.com",
+            "name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "role": "OWNER",
+            "status": "ACTIVE",
+            "joined_at": "2026-10-01T08:00:00Z"
+          },
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "email": "nam.nguyen@example.com",
+            "name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "joined_at": "2026-10-01T08:05:00Z"
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "email": "long.le@example.com",
+            "name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "role": "MEMBER",
+            "status": "ACTIVE",
+            "joined_at": "2026-10-01T08:10:00Z"
+          }
+        ]
+      },
+      "create_group_success": {
+        "id": "e4444444-0000-4000-8000-000000000004",
+        "name": "Nhóm Chơi Cầu Lông Thứ 7 🏸",
+        "currency": "VND",
+        "created_by": "a1111111-1111-4111-8111-111111111111",
+        "my_role": "OWNER",
+        "member_count": 1,
+        "created_at": "2026-10-10T15:00:00Z"
+      }
+    },
+    "expenses": {
+      "list_expenses_group_1": {
+        "items": [
+          {
+            "id": "x1111111-0000-4000-8000-000000000004",
+            "group_id": "e1111111-0000-4000-8000-000000000001",
+            "paid_by": "a1111111-1111-4111-8111-111111111111",
+            "paid_by_name": "Nguyễn Văn Nam",
+            "amount": 350000,
+            "currency": "VND",
+            "description": "Cà phê ngắm hoàng hôn Cheo Veo",
+            "split_type": "EXACT",
+            "version": 1,
+            "has_bill": true,
+            "created_at": "2026-09-13T16:45:00Z"
+          },
+          {
+            "id": "x1111111-0000-4000-8000-000000000003",
+            "group_id": "e1111111-0000-4000-8000-000000000001",
+            "paid_by": "c3333333-3333-4333-8333-333333333333",
+            "paid_by_name": "Lê Hoàng Long",
+            "amount": 850000,
+            "currency": "VND",
+            "description": "Lẩu gà lá é Tao Ngộ & Nước ngọt",
+            "split_type": "EXACT",
+            "version": 1,
+            "has_bill": false,
+            "created_at": "2026-09-12T19:30:00Z"
+          },
+          {
+            "id": "x1111111-0000-4000-8000-000000000002",
+            "group_id": "e1111111-0000-4000-8000-000000000001",
+            "paid_by": "b2222222-2222-4222-8222-222222222222",
+            "paid_by_name": "Trần Thị Lan",
+            "amount": 2000000,
+            "currency": "VND",
+            "description": "Homestay Thung Lũng Mây (2 đêm)",
+            "split_type": "EQUAL",
+            "version": 1,
+            "has_bill": true,
+            "created_at": "2026-09-12T14:00:00Z"
+          },
+          {
+            "id": "x1111111-0000-4000-8000-000000000001",
+            "group_id": "e1111111-0000-4000-8000-000000000001",
+            "paid_by": "a1111111-1111-4111-8111-111111111111",
+            "paid_by_name": "Nguyễn Văn Nam",
+            "amount": 1200000,
+            "currency": "VND",
+            "description": "Vé xe limousine khứ hồi Sài Gòn - Đà Lạt",
+            "split_type": "EQUAL",
+            "version": 1,
+            "has_bill": true,
+            "created_at": "2026-09-11T09:00:00Z"
+          }
+        ],
+        "page": 1,
+        "page_size": 20,
+        "total_items": 4,
+        "total_pages": 1
+      },
+      "expense_detail_equal": {
+        "id": "x1111111-0000-4000-8000-000000000001",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 1200000,
+        "currency": "VND",
+        "description": "Vé xe limousine khứ hồi Sài Gòn - Đà Lạt",
+        "split_type": "EQUAL",
+        "splits": [
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "user_name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 300000
+          },
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "user_name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 300000
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "user_name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 300000
+          },
+          {
+            "user_id": "d4444444-4444-4444-8444-444444444444",
+            "user_name": "Phạm Minh Thư",
+            "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 300000
+          }
+        ],
+        "version": 1,
+        "bill_media_id": "m-bill-01",
+        "bill_view_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&fit=crop",
+        "created_at": "2026-09-11T09:00:00Z",
+        "updated_at": "2026-09-11T09:00:00Z"
+      },
+      "expense_detail_exact": {
+        "id": "x1111111-0000-4000-8000-000000000004",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "paid_by": "a1111111-1111-4111-8111-111111111111",
+        "paid_by_name": "Nguyễn Văn Nam",
+        "amount": 350000,
+        "currency": "VND",
+        "description": "Cà phê ngắm hoàng hôn Cheo Veo",
+        "split_type": "EXACT",
+        "splits": [
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "user_name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 90000
+          },
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "user_name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 85000
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "user_name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 95000
+          },
+          {
+            "user_id": "d4444444-4444-4444-8444-444444444444",
+            "user_name": "Phạm Minh Thư",
+            "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+            "amount_owed": 80000
+          }
+        ],
+        "version": 1,
+        "bill_media_id": "m-bill-03",
+        "bill_view_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&fit=crop",
+        "created_at": "2026-09-13T16:45:00Z",
+        "updated_at": "2026-09-13T16:45:00Z"
+      }
+    },
+    "balances": {
+      "group_1_balances": {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "currency": "VND",
+        "total_group_expense": 4400000,
+        "balances": [
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "user_name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "net_balance": 615000,
+            "status": "OWED"
+          },
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "user_name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "net_balance": 410000,
+            "status": "OWED"
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "user_name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "net_balance": -245000,
+            "status": "OWES"
+          },
+          {
+            "user_id": "d4444444-4444-4444-8444-444444444444",
+            "user_name": "Phạm Minh Thư",
+            "avatar_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+            "net_balance": -780000,
+            "status": "OWES"
+          }
+        ]
+      },
+      "group_2_balances": {
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "currency": "VND",
+        "total_group_expense": 5190000,
+        "balances": [
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "user_name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "net_balance": 2770000,
+            "status": "OWED"
+          },
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "user_name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "net_balance": -1130000,
+            "status": "OWES"
+          },
+          {
+            "user_id": "c3333333-3333-4333-8333-333333333333",
+            "user_name": "Lê Hoàng Long",
+            "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
+            "net_balance": -1640000,
+            "status": "OWES"
+          }
+        ]
+      },
+      "group_3_balances": {
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "currency": "VND",
+        "total_group_expense": 160000,
+        "balances": [
+          {
+            "user_id": "a1111111-1111-4111-8111-111111111111",
+            "user_name": "Nguyễn Văn Nam",
+            "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+            "net_balance": 0,
+            "status": "SETTLED"
+          },
+          {
+            "user_id": "b2222222-2222-4222-8222-222222222222",
+            "user_name": "Trần Thị Lan",
+            "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+            "net_balance": 0,
+            "status": "SETTLED"
+          }
+        ]
+      }
+    },
+    "settlements": {
+      "group_1_settlements": {
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "currency": "VND",
+        "is_settled": false,
+        "transactions": [
+          {
+            "from_user_id": "d4444444-4444-4444-8444-444444444444",
+            "from_user_name": "Phạm Minh Thư",
+            "to_user_id": "b2222222-2222-4222-8222-222222222222",
+            "to_user_name": "Trần Thị Lan",
+            "amount": 615000,
+            "currency": "VND"
+          },
+          {
+            "from_user_id": "d4444444-4444-4444-8444-444444444444",
+            "from_user_name": "Phạm Minh Thư",
+            "to_user_id": "a1111111-1111-4111-8111-111111111111",
+            "to_user_name": "Nguyễn Văn Nam",
+            "amount": 165000,
+            "currency": "VND"
+          },
+          {
+            "from_user_id": "c3333333-3333-4333-8333-333333333333",
+            "from_user_name": "Lê Hoàng Long",
+            "to_user_id": "a1111111-1111-4111-8111-111111111111",
+            "to_user_name": "Nguyễn Văn Nam",
+            "amount": 245000,
+            "currency": "VND"
+          }
+        ],
+        "computed_at": "2026-09-14T11:00:00Z"
+      },
+      "group_2_settlements": {
+        "group_id": "e2222222-0000-4000-8000-000000000002",
+        "currency": "VND",
+        "is_settled": false,
+        "transactions": [
+          {
+            "from_user_id": "a1111111-1111-4111-8111-111111111111",
+            "from_user_name": "Nguyễn Văn Nam",
+            "to_user_id": "b2222222-2222-4222-8222-222222222222",
+            "to_user_name": "Trần Thị Lan",
+            "amount": 1130000,
+            "currency": "VND"
+          },
+          {
+            "from_user_id": "c3333333-3333-4333-8333-333333333333",
+            "from_user_name": "Lê Hoàng Long",
+            "to_user_id": "b2222222-2222-4222-8222-222222222222",
+            "to_user_name": "Trần Thị Lan",
+            "amount": 1640000,
+            "currency": "VND"
+          }
+        ],
+        "computed_at": "2026-10-04T00:00:00Z"
+      },
+      "group_3_settlements": {
+        "group_id": "e3333333-0000-4000-8000-000000000003",
+        "currency": "VND",
+        "is_settled": true,
+        "transactions": [],
+        "computed_at": "2026-10-05T12:00:00Z"
+      }
+    },
+    "payments": {
+      "list_payments_group_1": {
+        "items": [
+          {
+            "id": "p1111111-0000-4000-8000-000000000001",
+            "group_id": "e1111111-0000-4000-8000-000000000001",
+            "from_user": "d4444444-4444-4444-8444-444444444444",
+            "from_user_name": "Phạm Minh Thư",
+            "to_user": "b2222222-2222-4222-8222-222222222222",
+            "to_user_name": "Trần Thị Lan",
+            "amount": 300000,
+            "currency": "VND",
+            "created_at": "2026-09-14T10:30:00Z"
+          }
+        ],
+        "page": 1,
+        "page_size": 20,
+        "total_items": 1,
+        "total_pages": 1
+      },
+      "create_payment_success": {
+        "id": "p1111111-0000-4000-8000-000000000002",
+        "group_id": "e1111111-0000-4000-8000-000000000001",
+        "from_user": "c3333333-3333-4333-8333-333333333333",
+        "from_user_name": "Lê Hoàng Long",
+        "to_user": "a1111111-1111-4111-8111-111111111111",
+        "to_user_name": "Nguyễn Văn Nam",
+        "amount": 245000,
+        "currency": "VND",
+        "created_at": "2026-09-15T08:00:00Z"
+      }
+    },
+    "notifications": {
+      "list_notifications": {
+        "items": [
+          {
+            "id": "n1111111-0000-4000-8000-000000000001",
+            "type": "EXPENSE_ADDED",
+            "message": "Trần Thị Lan đã thêm khoản chi 'Homestay Thung Lũng Mây (2 đêm)' trong Chuyến Du Lịch Đà Lạt 🌸",
+            "payload": {
+              "group_id": "e1111111-0000-4000-8000-000000000001",
+              "expense_id": "x1111111-0000-4000-8000-000000000002",
+              "amount": 2000000,
+              "actor_id": "b2222222-2222-4222-8222-222222222222"
+            },
+            "is_read": false,
+            "created_at": "2026-09-12T14:05:00Z"
+          },
+          {
+            "id": "n1111111-0000-4000-8000-000000000002",
+            "type": "PAYMENT_RECEIVED",
+            "message": "Phạm Minh Thư đã gửi 300.000 ₫ cho Trần Thị Lan trong Chuyến Du Lịch Đà Lạt 🌸",
+            "payload": {
+              "group_id": "e1111111-0000-4000-8000-000000000001",
+              "payment_id": "p1111111-0000-4000-8000-000000000001",
+              "amount": 300000,
+              "actor_id": "d4444444-4444-4444-8444-444444444444"
+            },
+            "is_read": false,
+            "created_at": "2026-09-14T10:35:00Z"
+          },
+          {
+            "id": "n1111111-0000-4000-8000-000000000003",
+            "type": "GROUP_INVITED",
+            "message": "Trần Thị Lan đã thêm bạn vào nhóm 'Tiền Trọ & Sinh Hoạt Tháng 10 🏠'",
+            "payload": {
+              "group_id": "e2222222-0000-4000-8000-000000000002",
+              "actor_id": "b2222222-2222-4222-8222-222222222222"
+            },
+            "is_read": true,
+            "created_at": "2026-10-01T08:05:00Z"
+          },
+          {
+            "id": "n1111111-0000-4000-8000-000000000004",
+            "type": "PAYMENT_CONFIRMED",
+            "message": "Khoản thanh toán 80.000 ₫ từ Trần Thị Lan đã được xác nhận trong Cà Phê & Ăn Trưa Tech Team ☕",
+            "payload": {
+              "group_id": "e3333333-0000-4000-8000-000000000003",
+              "amount": 80000,
+              "actor_id": "b2222222-2222-4222-8222-222222222222"
+            },
+            "is_read": true,
+            "created_at": "2026-10-05T12:00:00Z"
+          }
+        ],
+        "page": 1,
+        "page_size": 20,
+        "total_items": 4,
+        "total_pages": 1
+      },
+      "unread_count": {
+        "unread_count": 2
+      },
+      "mark_read_response": {
+        "message": "Đã đánh dấu đã đọc thông báo"
+      },
+      "mark_all_read_response": {
+        "message": "Đã đánh dấu tất cả thông báo là đã đọc"
+      }
+    },
+    "media": {
+      "upload_url_response": {
+        "media_id": "m-demo-new-receipt",
+        "upload_url": "http://localhost:9000/money-judgement/bills/m-demo-new-receipt.jpg?AWSAccessKeyId=mockKey&Signature=mockSig&Expires=1800000000",
+        "storage_key": "bills/m-demo-new-receipt.jpg",
+        "expires_in": 900
+      },
+      "confirm_response": {
+        "media_id": "m-demo-new-receipt",
+        "status": "READY"
+      }
+    },
+    "errors": {
+      "unauthorized": {
+        "error_code": "UNAUTHORIZED",
+        "message": "Phiên đăng nhập đã hết hạn hoặc token không hợp lệ."
+      },
+      "forbidden": {
+        "error_code": "FORBIDDEN",
+        "message": "Bạn không có quyền thực hiện thao tác này."
+      },
+      "not_found": {
+        "error_code": "NOT_FOUND",
+        "message": "Tài nguyên không tồn tại."
+      },
+      "invalid_split_sum": {
+        "error_code": "INVALID_SPLIT_SUM",
+        "message": "Tổng số tiền chia (90.000) không khớp với tổng khoản chi (100.000).",
+        "details": {
+          "expected": 100000,
+          "actual": 90000
+        }
+      },
+      "group_balance_not_zero": {
+        "error_code": "CANNOT_LEAVE_UNSETTLED_GROUP",
+        "message": "Không thể rời nhóm hoặc xóa nhóm khi vẫn còn số dư nợ chưa thanh toán.",
+        "details": {
+          "user_id": "a1111111-1111-4111-8111-111111111111",
+          "current_balance": 410000
+        }
+      }
+    }
+  }
+}

@@ -11,6 +11,10 @@ Thumbs.db
 **/dist/
 **/build/
 **/coverage/
+**/__pycache__/
+**/.venv/
+*.pyc
+*.pyo
 
 # Agent coding files & folders (do not push to git)
 **/AGENTS.md
