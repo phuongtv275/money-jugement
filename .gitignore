@@ -22,4 +22,5 @@ Thumbs.db
 **/plan/
 **/.agents/
 **/skills-lock.json
+**/CONTEXT.md
 **/*.bak
