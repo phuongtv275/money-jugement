@@ -5,7 +5,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     DATABASE_URL: str = os.getenv(
-        "DATABASE_URL", "postgresql+asyncpg://rikkei:rikkei@localhost:5432/auth_db"
+        "DATABASE_URL",
+        "postgresql+asyncpg://postgres:postgres@localhost:5432/auth_db"
     )
     JWT_SECRET: str = os.getenv(
         "JWT_SECRET", "super-secret-jwt-key-for-auth-service-money-judgement"

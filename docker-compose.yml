@@ -1,4 +1,20 @@
 services:
+  postgres:
+    image: postgres:16
+    container_name: money-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - money_postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql:ro
+    networks:
+      - money-network
+
   backend:
     build:
       context: ./back-end
@@ -9,6 +25,9 @@ services:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/auth_db
+    depends_on:
+      - postgres
     networks:
       - money-network
 
@@ -30,6 +49,10 @@ services:
       - backend
     networks:
       - money-network
+
+volumes:
+  money_postgres_data:
+    name: money_postgres_data
 
 networks:
   money-network:

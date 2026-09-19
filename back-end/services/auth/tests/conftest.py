@@ -9,7 +9,7 @@ from sqlalchemy.pool import NullPool
 from services.auth.app.core.database import Base, get_db
 from services.auth.app.main import app
 
-TEST_DB_URL = "postgresql+asyncpg://rikkei:rikkei@localhost:5432/auth_test_db"
+TEST_DB_URL = "postgresql+asyncpg://postgres:postgres@localhost:5432/auth_test_db"
 test_engine = create_async_engine(TEST_DB_URL, poolclass=NullPool, echo=False)
 TestingSessionLocal = async_sessionmaker(test_engine, expire_on_commit=False)
 
