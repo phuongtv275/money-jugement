@@ -25,7 +25,12 @@ services:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/auth_db
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - DEV_MODE=true
+      - AUTO_SEED=true
     depends_on:
       - postgres
     networks:
